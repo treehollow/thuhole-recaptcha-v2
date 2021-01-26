@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>reCAPTCHA demo: Simple page</title>
+    <script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+      var verifyCallback = function(response) {
+        alert(response);
+      };
+    </script>
+  </head>
+  <body>
+    <form action="?" method="POST">
+      <div class="g-recaptcha" data-callback="verifyCallback" data-sitekey="6LdECz0aAAAAAPNTMOWOvQBl8cWBhceFlZ-QP-Q_"></div>
+      <br/>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
