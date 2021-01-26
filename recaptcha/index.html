@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>reCAPTCHA demo: Simple page</title>
+    <title>reCAPTCHA page</title>
     <script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
     <script type="text/javascript">
       var verifyCallback = function(response) {
@@ -9,10 +9,6 @@
     </script>
   </head>
   <body>
-    <form action="?" method="POST">
-      <div class="g-recaptcha" data-callback="verifyCallback" data-sitekey="6LdECz0aAAAAAPNTMOWOvQBl8cWBhceFlZ-QP-Q_"></div>
-      <br/>
-      <input type="submit" value="Submit">
-    </form>
+    <div class="g-recaptcha" data-callback="verifyCallback" data-sitekey="6LdECz0aAAAAAPNTMOWOvQBl8cWBhceFlZ-QP-Q_"></div>
   </body>
 </html>
