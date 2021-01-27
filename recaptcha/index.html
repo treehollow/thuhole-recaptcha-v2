@@ -1,14 +1,26 @@
 <html>
   <head>
     <title>reCAPTCHA page</title>
-    <script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
+    <script
+      src="https://www.recaptcha.net/recaptcha/api.js"
+      async
+      defer
+    ></script>
     <script type="text/javascript">
-      var verifyCallback = function(response) {
-        window.location.href = "http://local_treehollow_app/?recaptcha_token=" + (response);
+      var verifyCallback = function (response) {
+        window.location.href =
+          "http://local_treehollow_app/?recaptcha_token=" + response;
       };
     </script>
   </head>
   <body>
-    <div class="g-recaptcha" data-callback="verifyCallback" data-sitekey="6LdECz0aAAAAAPNTMOWOvQBl8cWBhceFlZ-QP-Q_"></div>
+    <div style="text-align: center">
+      <div
+        class="g-recaptcha"
+        data-callback="verifyCallback"
+        data-sitekey="6LdECz0aAAAAAPNTMOWOvQBl8cWBhceFlZ-QP-Q_"
+        style="display: inline-block;"
+      ></div>
+    </div>
   </body>
 </html>
