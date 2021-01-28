@@ -9,8 +9,7 @@
     ></script>
     <script type="text/javascript">
       var verifyCallback = function (response) {
-        window.location.href =
-          "https://id.thuhole.com/?recaptcha_token=" + response;
+        window.location.replace("https://id.thuhole.com/?recaptcha_token=" + response);
       };
     </script>
   </head>
