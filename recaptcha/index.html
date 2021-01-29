@@ -1,26 +1,44 @@
 <html>
   <head>
     <title>reCAPTCHA page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" > 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script
-      src="https://www.recaptcha.net/recaptcha/api.js"
+      src="https://www.recaptcha.net/recaptcha/api.js?onload=renderRecaptcha&render=explicit"
       async
       defer
     ></script>
     <script type="text/javascript">
+      let matched = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var renderRecaptcha = function () {
+        grecaptcha.render("ReCaptchContainer", {
+          sitekey: "6LdECz0aAAAAAPNTMOWOvQBl8cWBhceFlZ-QP-Q_",
+          callback: verifyCallback,
+          theme: matched ? "dark" : "light", //light or dark
+          type: "image", // image or audio
+          size: "normal", //normal or compact
+        });
+      };
+
       var verifyCallback = function (response) {
-        window.location.replace("https://id.thuhole.com/?recaptcha_token=" + response);
+        window.location.replace("https://goo.gle/?recaptcha_token=" + response);
       };
     </script>
+    <style>
+      body {
+        background-color: white;
+        color: black;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: black;
+          color: white;
+        }
+      }
+    </style>
   </head>
   <body>
     <div style="text-align: center">
-      <div
-        class="g-recaptcha"
-        data-callback="verifyCallback"
-        data-sitekey="6LdECz0aAAAAAPNTMOWOvQBl8cWBhceFlZ-QP-Q_"
-        style="display: inline-block;"
-      ></div>
+      <div id="ReCaptchContainer" style="display: inline-block"></div>
     </div>
   </body>
 </html>
